@@ -21,7 +21,7 @@
                     $stmt = $this->db->prepare($sql);
                     // bind all placeholders to the actual values
                     $stmt->bindparam(':username', $username);
-                    $stmt->bindparam(':password', $password);
+                    $stmt->bindparam(':password', $new_password);
                     // execute statement
                     $stmt->execute();
                     return true;

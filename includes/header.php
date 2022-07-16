@@ -1,3 +1,4 @@
+<?php include_once 'session.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,8 +12,7 @@
     <title>Attendance - <?php echo $title ?></title>
 </head>
 <body>
-    <div class="container">
-        <nav class="navbar navbar-expand-lg bg-primary">
+<nav class="navbar navbar-expand-lg bg-primary p-3">
             <a class="navbar-brand text-white" href="index.php">IT Conference</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -20,25 +20,30 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <div class="navbar-nav mr-auto">
                     <li class="nav-item">
-                    <a class="nav-link active text-white" aria-current="page" href="index.php">Home</a>
+                    <a class="nav-link active text-white" href="index.php">Home</a>
                     </li>
                     <li class="nav-item">
                     <a class="nav-link text-white" href="viewrecords.php">View Attendees</a>
                     </li>
                 </div>
+            </div>
+            <div class="collapse navbar-collapse" id="navbarNav">
                 <div class="navbar-nav ml-auto">
                     <?php
-                        if(isset($_SESSION['userid'])){
+                        if(!isset($_SESSION['userid'])){
                     ?>
                     <li class="nav-item">
-                    <a class="nav-link active text-white" aria-current="page" href="login.php">Login</a>
+                    <a class="nav-link text-white" href="login.php">Login</a>
                     </li>
                     <?php }else{ ?>
                         <li class="nav-item">
-                            <!-- <span>Hello <?php echo $_SESSION['username'] ?>!</span> -->
-                        <a class="nav-link active text-white" aria-current="page" href="logout.php">Logout</a>
+                        <a class="nav-link text-white" href="logout.php">
+                            <span>Hello <?php echo $_SESSION['username']; ?>!</span> Logout
+                        </a>
                         </li>
                     <?php } ?>
                 </div>
             </div>
         </nav>
+    <div class="container">
+        

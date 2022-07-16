@@ -23,7 +23,7 @@
 
 <h1 class="text-center"><?php echo $title ?></h1>
 <form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="post">
-<table class="table table-sm">
+<table class="table table">
     <tr>
         <td><label for="username">Username: *</label></td>
         <td><input type="text" name="username" class="form-control" id="username" 
@@ -33,13 +33,12 @@
     </tr>
     <tr>
         <td><label for="password">Password: *</label></td>
-        <td><input type="text" name="password" class="form-control" id="password" ">
+        <td><input type="password" name="password" class="form-control" id="password">
             <?php if(empty($username) && isset($password_error)) echo "<p class='text-danger'>$password_error</p>"; ?>
         </td>
     </tr>
-</table>
-<input type="submit" value="login" class="btn btn-primary btn-block"><br/>
+</table><br>
+<button type="submit" class="btn btn-primary btn-block">Login</button><br/>
 <a href="#">Forgot Password</a>
 </form>
-
 <?php include_once 'includes/footer.php' ?>

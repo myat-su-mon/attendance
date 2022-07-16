@@ -1,7 +1,7 @@
 <?php 
     $title = 'Index';
     require_once 'includes/header.php';
-    // require_once 'includes/auth_check.php';
+    require_once 'includes/auth_check.php';
     require_once 'db/conn.php'; 
 
     if(!isset($_GET['id'])){
@@ -11,6 +11,7 @@
         $result = $crud->getAttendeeDetails($id);
 ?>
 
+<<img src="<?php echo empty($result['avatar_path'])? 'uploads/blank.png': $result['avatar_path']; ?>" class="img-fluid rounded" style="width: 20%; height: 20%">
 <div class="card" style="width: 18rem;">
     <div class="card-body">
         <h5 class="card-title">

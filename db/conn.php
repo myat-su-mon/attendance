@@ -1,8 +1,18 @@
 <?php
-    $host = 'localhost';
-    $db = 'attendance';
-    $user = 'root';
-    $pass = 'root';
+    // development : local server
+    // $host = 'localhost';
+    // $db = 'attendance';
+    // $user = 'root';
+    // $pass = 'root';
+    // $charset = 'utf8mb4';
+
+    // $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
+
+    // production: remote server
+    $host = 'sql6.freesqldatabase.com';
+    $db = 'sql6506614';
+    $user = 'sql6506614';
+    $pass = '6atJSxCljD';
     $charset = 'utf8mb4';
 
     $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
@@ -15,11 +25,9 @@
     }
 
     require_once 'crud.php';
+    require_once 'user.php';
     $crud = new crud($pdo);
+    $user = new user($pdo);
 
-    // require_once 'user.php';
-    // $crud = new crud($pdo);
-    // $user = new crud($user);
-
-    // $user->insertUser("admin", "password");
+    $user->insertUser("admin", "admin");
 ?>
