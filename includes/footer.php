@@ -1,4 +1,4 @@
-<div id="footer" class="p-3 bg-primary text-white mt-3">
+<div id="footer" class="p-3 bg-primary text-white fixed-bottom mt-3">
     <p class="text-center">Copyright &copy; - IT Conference Attendance System <?php echo date('Y'); ?></p>
 </div>
 </div>

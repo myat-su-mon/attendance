@@ -20,7 +20,6 @@
 
         $isSuccess = $crud->insertAttendee($fname, $lname, $dob, $email, $contact, $specialty, $destination);
         $specialtyName = $crud->getSpecialtyById($specialty);
-echo $specialtyName;exit();
         if($isSuccess){
             SendEmail::SendMail($email, 'Welcome to IT Conference', 'You have successfully registered for this year\'s IT conference.');
             include 'includes/successmessage.php';
