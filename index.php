@@ -42,8 +42,8 @@
             <input type="file" accept="image/*" class="file-input" id="avatar" name="avatar">
             <small id="avatarHelp" class="form-text">File Upload is Optional.</small>
         </div><br>
-        <div class="d-grid gap-2 mb-2">
-            <button class="btn btn-primary" type="submit" name="submit">Submit</button>
+        <div class="d-grid gap-2">
+            <button class="btn btn-primary mb-3" type="submit" name="submit">Submit</button>
         </div>
     </form>
 
